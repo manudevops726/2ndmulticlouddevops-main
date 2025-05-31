@@ -1,4 +1,4 @@
- const API_BASE_URL = "http://34.205.69.8:82";
+ const API_BASE_URL = "http://44.211.156.103:84";
 //const API_BASE_URL = "http://veera.905418452515.realhandsonlabs.net";
 // export default API_BASE_URL;
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://backend";
