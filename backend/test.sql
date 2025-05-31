@@ -39,3 +39,4 @@ ALTER TABLE `books`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 COMMIT;
+ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'Devops123'; ####for giving permissions to the user
