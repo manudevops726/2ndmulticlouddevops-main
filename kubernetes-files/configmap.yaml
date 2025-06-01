@@ -2,6 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: db-config
+  namespace: default
 data:
-  DB_PORT: "3306"            # Port for PostgreSQL
-  DB_NAME: "test"  # Replace with your database name
+  DB_PORT: "3306"
+  DB_NAME: "test"
+
