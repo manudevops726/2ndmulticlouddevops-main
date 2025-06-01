@@ -1,3 +1,21 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+type: Opaque
+stringData:
+  db_host: book.rds.com
+  db_username: admin
+  db_password: Devops123
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+data:
+  DB_PORT: "3306"
+  DB_NAME: your_database_name_here
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,12 +32,12 @@ spec:
     metadata:
       labels:
         app: backend
-    spec:
-      containers:
-      - name: backend
-        image: 342547628707.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+ spec:
+    containers:
+    - name: backend
+      image: 342547628707.dkr.ecr.us-east-1.amazonaws.com/backend:latest
         ports:
-        - containerPort: 80
+         - containerPort: 80
         env:
         - name: DB_HOST
           valueFrom:
@@ -47,4 +65,4 @@ spec:
               name: db-config
               key: DB_NAME
         - name: PORT
-          value: "80"   # Your backend app listen port
+          value: "80"
