@@ -4,6 +4,5 @@ metadata:
   name: db-config
   namespace: default
 data:
-  DB_PORT: "3306"
-  DB_NAME: "test"
-
+  DB_PORT: "3306"      # Port kept as string (recommended)
+  DB_NAME: test         # No need for quotes unless value has special characters
