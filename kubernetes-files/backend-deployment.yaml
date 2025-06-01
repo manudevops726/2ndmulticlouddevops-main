@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: default
   labels:
     app: backend
 spec:
@@ -30,6 +31,11 @@ spec:
             secretKeyRef:
               name: db-secret
               key: db_username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: db_password
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:
@@ -40,10 +46,5 @@ spec:
             configMapKeyRef:
               name: db-config
               key: DB_NAME
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: db-secret
-              key: db_password
         - name: PORT
-          value: "3306"  # Adjust if necessary
+          value: "80"   # Your backend app listen port
