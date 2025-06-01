@@ -19,22 +19,20 @@ spec:
         image: 342547628707.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
         ports:
         - containerPort: 80
-      #  env:   # <-- Fixed indentation
-       # - name: REACT_APP_API_BASE_URL
-        #  value: "http://ad2084f73b7e34376bd49ec0ea55a8bb-2099085754.us-east-1.elb.amazonaws.com"
-
+        env:
+        - name: REACT_APP_API_BASE_URL
+          value: "http://ad2084f73b7e34376bd49ec0ea55a8bb-2099085754.us-east-1.elb.amazonaws.com"
 ---
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: frontend
 spec:
+  selector:
+    app: frontend
   ports:
   - port: 80
     targetPort: 80
     protocol: TCP
-      #    nodePort: 31004  # Optional: Specify a nodePort if you want a fixed port
-  selector:
-    app: frontend  # Ensure this matches the labels in the Deployment
+    # nodePort: 31004  # Uncomment if you want a fixed NodePort and change type to NodePort
   type: LoadBalancer
-
