@@ -32,12 +32,12 @@ spec:
     metadata:
       labels:
         app: backend
- spec:
-    containers:
-    - name: backend
-      image: 342547628707.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+    spec:
+      containers:
+      - name: backend
+        image: 342547628707.dkr.ecr.us-east-1.amazonaws.com/backend:latest
         ports:
-         - containerPort: 80
+        - containerPort: 80
         env:
         - name: DB_HOST
           valueFrom:
