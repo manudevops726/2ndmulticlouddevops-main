@@ -46,4 +46,4 @@ spec:
               name: db-secret
               key: db_password
         - name: PORT
-          value: "3306"  # Adjust if necessary
+          value: "80"  # Adjust if necessary
