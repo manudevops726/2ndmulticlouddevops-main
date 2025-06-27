@@ -1,5 +1,5 @@
 // const API_BASE_URL = "http://44.211.156.103:84";
-const API_BASE_URL = "http://20.247.179.72";
+const API_BASE_URL = "http://172.188.49.39";
 // export default API_BASE_URL;
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://backend";
 /// export default API_BASE_URL;
